@@ -2,10 +2,10 @@
 #include <WiFi.h>
 #include <ESP_Mail_Client.h>
 
-#define WIFI_SSID "leduo"
-#define WIFI_PASSWORD "17592216"
-#define AUTHOR_EMAIL "duranddjiatsa@gmail.com"   // coordonnées de l'expéditeur 
-#define AUTHOR_PASSWORD "cuzk qhxd hzod unfr"
+#define WIFI_SSID "nom_point_d'accès"
+#define WIFI_PASSWORD "mot de passe "
+#define AUTHOR_EMAIL "adresse@mail "   // coordonnées de l'expéditeur 
+#define AUTHOR_PASSWORD "mot de passe"
 
 
 #define SMTP_HOST "smtp.gmail.com"
@@ -18,7 +18,7 @@
 
 
 // coordonnées du récepteur
-#define RECIPIENT_EMAIL "rocherleos@gmail.com"
+#define RECIPIENT_EMAIL "adresse@mail" //adresse destinataire
 
 //objet smtp
 
@@ -105,6 +105,7 @@ void setup(){
   message.addAttachment(pj);
 
   message.resetAttachItem(pj);
+  //2e pièce jointe
   pj.descr.filename = "consigne.txt";
   pj.descr.mime = "text/plain";
   pj.file.path = "/consigne.txt";
